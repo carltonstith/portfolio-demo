@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const BLOG_API_URL =
@@ -66,6 +67,7 @@ export default function BlogPage() {
         {blogData && blogData.map((post) => (
           <li key={post.id} className="pt-6 pb-6 rounded-xl border-t border-b border-white/10 hover:-translate-y-1 hover:border-gray-100 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
             {/* <img src={post.jetpack_featured_media_url} alt="" /> */}
+            <Image src={post.jetpack_featured_media_url} alt="Featured Image" width={800} height={500} />
             <h2>{post.title.rendered}</h2>
             <div
               dangerouslySetInnerHTML={{
