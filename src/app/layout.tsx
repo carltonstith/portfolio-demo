@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
-// import Link from "next/link";
+import { Analytics } from '@vercel/analytics/next';
 import Nav from "./nav/page";
-// import Footer from "./footer/page";
 import { ThemeProvider } from "next-themes";
-//import Wrapper from "./wrapper/page";
 
 const geistSan = Geist({
   subsets: ["latin"],
@@ -27,8 +25,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Carlton Stith",
     description: "Welcome to my personal portfolio website.",
-    //creator: "@carltonstith",
-    //images: []
   },
 };
 
@@ -53,7 +49,7 @@ export default function RootLayout({
             </div>
           </header>
           {children}
-          {/* </Wrapper> */}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

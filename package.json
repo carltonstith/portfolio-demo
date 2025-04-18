@@ -1,6 +1,5 @@
 {
   "name": "portfolio-demo",
-  "homepage": "https://ceejaysmedia.com/portfolio-demo",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +10,7 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.0",
+    "@vercel/analytics": "^1.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "emailjs-com": "^3.2.0",
