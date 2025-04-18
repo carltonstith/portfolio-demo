@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ResumeHeaderLeft from "../resumeheaderleft/page";
 import ResumeHeaderRight from "../resumeheaderright/page";
 

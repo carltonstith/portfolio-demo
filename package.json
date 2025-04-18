@@ -1,11 +1,12 @@
 {
   "name": "portfolio-demo",
+  "homepage": "https://ceejaysmedia.com/portfolio-demo",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },
   "dependencies": {

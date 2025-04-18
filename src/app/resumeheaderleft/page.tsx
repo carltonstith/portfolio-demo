@@ -172,7 +172,7 @@ export default function ResumeHeaderLeft() {
               <div className="flex flex-wrap gap-2">
                 {frontendSkills.map((skill, key) => (
                   <span
-                    key={skill}
+                    key={key}
                     className="bg-black text-white px-3 py-1 rounded-full text-sm hover:bg-blue-500/200 hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"
                   >
                     {skill}
@@ -187,7 +187,7 @@ export default function ResumeHeaderLeft() {
             <div className="flex flex-wrap gap-2">
               {backendSkills.map((skill, key) => (
                 <span
-                  key={skill}
+                  key={key}
                   className="bg-black text-white px-3 py-1 rounded-full text-sm hover:bg-blue-500/200 hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"
                 >
                   {skill}

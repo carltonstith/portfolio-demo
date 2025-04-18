@@ -1,44 +1,51 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description: "Explore my projects and skills.",
+};
+
 export default function Portfolio() {
-  const projects = [
-    {
-      title: "Project 1",
-      description: "Description of Project 1",
-      technologies: ["React", "Node.js", "MongoDB"],
-      link: "/projects/project1",
-    },
-    {
-      title: "Project 2",
-      description: "Description of Project 2",
-      technologies: ["Python", "Django", "PostgreSQL"],
-      link: "/projects/project2",
-    },
-    {
-      title: "Project 3",
-      description: "Description of Project 3",
-      technologies: ["Java", "Spring Boot", "MySQL"],
-      link: "/projects/project3",
-    },
-  ];
-  const featuredProjects = [
-    {
-      title: "Project 1",
-      description: "Description of Project 1",
-      technologies: ["React", "Node.js", "MongoDB"],
-      link: "/projects/project1",
-    },
-    {
-      title: "Project 2",
-      description: "Description of Project 2",
-      technologies: ["Python", "Django", "PostgreSQL"],
-      link: "/projects/project2",
-    },
-    {
-      title: "Project 3",
-      description: "Description of Project 3",
-      technologies: ["Java", "Spring Boot", "MySQL"],
-      link: "/projects/project3",
-    },
-  ];
+  // const projects = [
+  //   {
+  //     title: "Project 1",
+  //     description: "Description of Project 1",
+  //     technologies: ["React", "Node.js", "MongoDB"],
+  //     link: "/projects/project1",
+  //   },
+  //   {
+  //     title: "Project 2",
+  //     description: "Description of Project 2",
+  //     technologies: ["Python", "Django", "PostgreSQL"],
+  //     link: "/projects/project2",
+  //   },
+  //   {
+  //     title: "Project 3",
+  //     description: "Description of Project 3",
+  //     technologies: ["Java", "Spring Boot", "MySQL"],
+  //     link: "/projects/project3",
+  //   },
+  // ];
+  // const featuredProjects = [
+  //   {
+  //     title: "Project 1",
+  //     description: "Description of Project 1",
+  //     technologies: ["React", "Node.js", "MongoDB"],
+  //     link: "/projects/project1",
+  //   },
+  //   {
+  //     title: "Project 2",
+  //     description: "Description of Project 2",
+  //     technologies: ["Python", "Django", "PostgreSQL"],
+  //     link: "/projects/project2",
+  //   },
+  //   {
+  //     title: "Project 3",
+  //     description: "Description of Project 3",
+  //     technologies: ["Java", "Spring Boot", "MySQL"],
+  //     link: "/projects/project3",
+  //   },
+  // ];
   return (
     <section>
       <div className="flex items-center justify-center min-h-screen py-20">
