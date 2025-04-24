@@ -54,7 +54,11 @@ export default function About() {
                   {frontendSkills.map((skill, key) => (
                     <span
                       key={key}
-                      className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm hover:bg-blue-500/200 hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"
+                      className="bg-orange-500 border-orange-700 text-white px-3 py-1 rounded-full text-sm hover:bg-orange-400 hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"
+                      // onClick={() => {
+                      //   // Handle skill click
+                      //   console.log(`Clicked on ${skill}`);
+                      // }}
                     >
                       {skill}
                     </span>
@@ -68,7 +72,7 @@ export default function About() {
                   {backendSkills.map((skill, key) => (
                     <span
                       key={key}
-                      className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm hover:bg-blue-500/200 hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"
+                      className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm hover:bg-orange-400 hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition"
                     >
                       {skill}
                     </span>

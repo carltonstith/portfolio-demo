@@ -6,48 +6,28 @@ import React from "react";
 export default function Home() {
   return (
     <>
-    <main className="min-h-screen flex items-center justify-center relative">
-      <div className="text-center z-10 px-4">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">
-        <span className="wave">👋</span>, I&apos;m Carlton&#33;
-        </h1>
-        <p className="text-lg mb-8 max-w-lg mx-auto">
-          I&apos;m a software engineer with a passion for building web
-          applications. My expertise lies in creating scalable, user-friendly,
-          and efficient solutions for modern web platforms.
-        </p>
-        <div className="space-x-2">
-          <a href="/resume">
-            <Button className="resume-button">Resume</Button>
-          </a>
-          <a href="/portfolio">
-            <Button className="resume-button" variant="outline">
-              View Portfolio
-            </Button>
-          </a>
+      <main className="min-h-screen flex items-center justify-center relative">
+        <div className="text-center z-10 px-4">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <span className="wave">👋</span>, I&apos;m Carlton&#33;
+          </h1>
+          <p className="text-lg mb-8 max-w-lg mx-auto">
+            I&apos;m a software engineer with a passion for building web
+            applications. My expertise lies in creating scalable, user-friendly,
+            and efficient solutions for modern web platforms.
+          </p>
+          <div className="space-x-2">
+            <a href="/resume">
+              <Button className="resume-button">Resume</Button>
+            </a>
+            <a href="/portfolio">
+              <Button className="resume-button" variant="outline">
+                View Portfolio
+              </Button>
+            </a>
+          </div>
         </div>
-      </div>
-    </main>
-      {/* <main className="flex flex-col items-center justify-between p-24">
-        <h1 className="text-4xl font-bold">
-          <span className="wave">👋</span>, I&apos;m Carlton&#33;
-        </h1>
-        <p className="mt-4 text-lg">
-          I&apos;m a software engineer with a passion for building web
-          applications. My expertise lies in creating scalable, user-friendly,
-          and efficient solutions for modern web platforms.
-        </p>
-        <div className="space-x-2">
-          <a href="/resume">
-            <Button className="resume-button">Resume</Button>
-          </a>
-          <a href="/portfolio">
-            <Button className="resume-button" variant="outline">
-              View Portfolio
-            </Button>
-          </a>
-        </div>
-      </main> */}
+      </main>
     </>
   );
 }

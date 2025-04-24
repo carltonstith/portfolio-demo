@@ -55,7 +55,7 @@ export default function Portfolio() {
             Featured Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
+            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
               <h3 className="text-xl font-bold mb-2">Cloud Platform</h3>
               <p className="text-gray-400 mb-4">
                 Scalable cloud infrastructure management with real-time
@@ -65,21 +65,21 @@ export default function Portfolio() {
                 {["React", "Node.js", "AWS", "Docker"].map((tech, key) => (
                   <span
                     key={key}
-                    className="bg-blue-500/10 text-blue-500 py-1 px-3 text-sm font-medium mr-2 rounded-full hover:bg-blue=500/20 transition-all hover:shadow-[0_2px_8px _rgba(59,130,2246.0.1)]"
+                    className="bg-orange-500 text-white py-1 px-3 text-sm font-medium mr-2 rounded-full hover:bg-blue=500/20 transition-all hover:shadow-[0_2px_8px _rgba(59,130,2246.0.1)]"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
               <div className="flex justify-between items-center mt-4">
-                <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors my-4 no-underline">
+                <a href="#" className="text-orange-400 hover:text-orange-300 transition-colors my-4 no-underline">
                   {" "}
                   View Project &rarr;
                 </a>
               </div>
             </div>
 
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
+            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
               <h3 className="text-xl font-bold mb-2">AI Analytics Dashboard</h3>
               <p className="text-gray-400 mb-4">
                 ML-powered data visiualization and analytics platform with predective analytics and interactive reports
@@ -88,21 +88,21 @@ export default function Portfolio() {
                 {["Python", "Tensorflow", "D3.js", "Flask"].map((tech, key) => (
                   <span
                     key={key}
-                    className="bg-blue-500/10 text-blue-500 py-1 px-3 text-sm font-medium mr-2 rounded-full hover:bg-blue=500/20 transition-all hover:shadow-[0_2px_8px _rgba(59,130,2246.0.1)]"
+                    className="bg-orange-500 text-white py-1 px-3 text-sm font-medium mr-2 rounded-full hover:bg-blue=500/20 transition-all hover:shadow-[0_2px_8px _rgba(59,130,2246.0.1)]"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
               <div className="flex justify-between items-center mt-4">
-                <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors my-4 no-underline">
+                <a href="#" className="text-orange-400 hover:text-orange-300 transition-colors my-4 no-underline">
                   {" "}
                   View Project &rarr;
                 </a>
               </div>
             </div>
 
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
+            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
               <h3 className="text-xl font-bold mb-2">E-Commerce Web App</h3>
               <p className="text-gray-400 mb-4">
                 Full-stack e-commerce with modern UI, secure payment intergration, and customizable product inventory
@@ -111,21 +111,21 @@ export default function Portfolio() {
                 {["Next.js", "TypeScript", "Stripe", "PostgreSQL"].map((tech, key) => (
                   <span
                     key={key}
-                    className="bg-blue-500/10 text-blue-500 py-1 px-3 text-sm font-medium mr-2 rounded-full hover:bg-blue=500/20 transition-all hover:shadow-[0_2px_8px _rgba(59,130,2246.0.1)]"
+                    className="bg-orange-500 text-white py-1 px-3 text-sm font-medium mr-2 rounded-full hover:bg-blue=500/20 transition-all hover:shadow-[0_2px_8px _rgba(59,130,2246.0.1)]"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
               <div className="flex justify-between items-center mt-4">
-                <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors my-4 no-underline">
+                <a href="#" className="text-orange-400 hover:text-orange-300 transition-colors my-4 no-underline">
                   {" "}
                   View Project &rarr;
                 </a>
               </div>
             </div>
 
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
+            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
               <h3 className="text-xl font-bold mb-2">Real-Time Chat App</h3>
               <p className="text-gray-400 mb-4">
                 Scalable chat platform supporting real-time messaging, presence, and group chat features.
@@ -134,14 +134,14 @@ export default function Portfolio() {
                 {["SocketIO", "Express", "React", "Redis"].map((tech, key) => (
                   <span
                     key={key}
-                    className="bg-blue-500/10 text-blue-500 py-1 px-3 text-sm font-medium mr-2 rounded-full hover:bg-blue=500/20 transition-all hover:shadow-[0_2px_8px _rgba(59,130,2246.0.1)]"
+                    className="bg-orange-500 text-white py-1 px-3 text-sm font-medium mr-2 rounded-full hover:bg-blue=500/20 transition-all hover:shadow-[0_2px_8px _rgba(59,130,2246.0.1)]"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
               <div className="flex justify-between items-center mt-4">
-                <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors my-4 no-underline">
+                <a href="#" className="text-orange-400 hover:text-orange-300 transition-colors my-4 no-underline">
                   {" "}
                   View Project &rarr;
                 </a>

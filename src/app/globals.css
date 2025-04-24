@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @custom-variant dark (&:where(.dark, .dark *));
+@plugin "daisyui";
 
 @theme inline {
   --color-background: var(--background);
@@ -96,7 +97,7 @@ body {
   padding: 1rem;
 }
 nav {
-  display: block;
+  /* display: block; */
   border-width: 0px;
   box-sizing: border-box;
   border-style: solid;

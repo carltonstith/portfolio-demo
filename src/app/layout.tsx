@@ -4,6 +4,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from '@vercel/analytics/next';
 import Nav from "./nav/page";
 import { ThemeProvider } from "next-themes";
+import Footer from "./footer/page";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSan = Geist({
   subsets: ["latin"],
@@ -49,7 +51,9 @@ export default function RootLayout({
             </div>
           </header>
           {children}
+          <Footer/>
           <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>

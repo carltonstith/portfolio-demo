@@ -35,7 +35,7 @@ export default function BlogPage() {
       try {
         const response = await fetch(`${BLOG_API_URL}`);
         const data = (await response.json()) as Post[];
-        console.log(data)
+        // console.log(data)
         setBlogData(data);
       } catch (e) {
         setError(e);
@@ -49,7 +49,10 @@ export default function BlogPage() {
 
   if (isLoading) {
     return (
-      <div className="text-red-400">Loading...</div>
+      // <div className="text-red-400">Loading...</div>
+      <div className="flex items-center justify-center min-h-screen">
+        <span className="loading loading-dots loading-xl"></span>
+      </div>
     );
   }
 
