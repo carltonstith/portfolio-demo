@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -61,7 +62,7 @@ export default function Portfolio() {
             {/* Cuts By Us, WordPress **REMOVE** */}
             <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
               <h3 className="text-xl font-bold mb-2">Cuts By Us</h3>
-              <img src="cutsByUsBarbershop.jpg" alt="logo" className="my-10" />
+              <Image src="/cutsByUsBarbershop.jpg" alt="Cut's By Us Barbershop" width={300} height={300} className="my-10" />
               <p className="text-gray-400 mb-4">
                 Website design, development, and social media management.
               </p>
@@ -103,7 +104,7 @@ export default function Portfolio() {
               <h3 className="text-xl font-bold mb-2">
                 Password Generator Application
               </h3>
-              <img src="password-generator.png" alt="logo" className="my-10" />
+              <Image src="/password-generator.png" alt="Password Generator" width={300} height={300} className="my-10" />
               <p className="text-gray-400 mb-4">
                 Create a secure password in a sleek UI and save it to your
                 clipboard.
@@ -145,7 +146,7 @@ export default function Portfolio() {
               <h3 className="text-xl font-bold mb-2">
                 Systems Management Application Dashboard
               </h3>
-              <img src="stith-auto-group.png" alt="logo" className="my-10" />
+              <Image src="/stith-auto-group.png" alt="Stith Auto Group" width={300} height={300} className="my-10" />
               <p className="text-gray-400 mb-4">
                 Full-stack systems management system for a fictional auto
                 dealership with modern UI, CRUD functionality, and customizable
@@ -183,7 +184,7 @@ export default function Portfolio() {
             {/* Coronavirus Tracker, ASP.NET or .NET  */}
             <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
               <h3 className="text-xl font-bold mb-2">Coronavirus Tracker</h3>
-              <img src="coronavirus_tracker.png" alt="logo" className="my-10" />
+              <Image src="/coronavirus_tracker.png" alt="Coronavirus Tracker" width={300} height={300} className="my-10" />
               <p className="text-gray-400 mb-4">
                 Application used to retrieve COVID-19 cases and display related
                 data.

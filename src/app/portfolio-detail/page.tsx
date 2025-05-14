@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 
 export default function PortfolioDetail() {
   return (
     <>
-      <section className="min-h-screen flex items-center justify-center py-20">
+      {/* <section className="min-h-screen flex items-center justify-center py-20">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-center">
             Portfolio Detail Page
@@ -39,9 +39,6 @@ export default function PortfolioDetail() {
               the Chart.js library to create charts and graphs to display the
               data.
             </p>
-            {/* <p>
-        This was a personal project. This ongoing project of mine is a testament to my personal list of previous accomplishments and future goals. I am continuously learning and honing my craft so each tip is followed. Feel free to fork and contribute to this project.
-        </p> */}
             <img src="password-generator.png" alt="logo" />
             <a
               href="https://password-generator-ogbjiact8-carltonstiths-projects.vercel.app"
@@ -63,7 +60,6 @@ export default function PortfolioDetail() {
               Framework Core to interact with a SQL Server database. The
               application uses the Tailwind CSS library to style the UI.
             </p>
-            {/* <p>The application uses the Chart.js library to create charts and graphs to display the data.</p> */}
             <img src="stith-auto-group.png" alt="logo" />
             <a
               href="https://stithautogroup-ui.vercel.app"
@@ -97,7 +93,7 @@ export default function PortfolioDetail() {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
