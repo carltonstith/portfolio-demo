@@ -1,7 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
-// import { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function Toggle() {
