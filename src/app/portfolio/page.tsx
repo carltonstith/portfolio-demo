@@ -78,17 +78,16 @@ export default function Portfolio() {
               <p className="text-gray-400 mb-4">
                 Alarm Connections is no longer in business. Alarm Connections
                 was a wholesale alarm monitoring company that I had the pleasure
-                of working for for several years. The company provided alarm
+                of working with for several years. The company provided alarm
                 monitoring services to alarm dealers and integrators. The
                 company needed a partner portal to allow their business partners to
-                manage their accounts, upload and view reports, and access attrition reports. I was solely responsible for the design and
+                manage their accounts, upload and view service invoices and reports, and access attrition reports. I was solely responsible for the design and
                 development, and management of the partner portal (as well as an internal
                 customer management system component, The Customer Care Dashboard). I used a .NET 3.1 Web API and
                 Angular for the UI application. This CRUD application allows
                 users to create, read, and upload invoices for processing. The
                 application uses the Entity Framework Core to interact with a
-                SQL Server database. The application uses the Bootstrap CSS
-                library to style the UI.
+                SQL Server database. The application also uses Bootstrap CSS to style the UI.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {[
