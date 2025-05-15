@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Portfolio for Carlton Stith.
+
+![alt text](https://raw.githubusercontent.com/carltonstith/portfolio-demo/main/homePageCarltonStith.png "Carlton Stith")
+
+This was created using [Next.js](https://nextjs.org) and bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
