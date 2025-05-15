@@ -1,7 +1,12 @@
-"use client";
+//"use client";
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
-// import Link from "next/link";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Home | Carlton Stith",
+  description: "Welcome to my personal portfolio website. Carlton solves software problems, builds sophisticated applications, and creats things for software applications and the web several minutes outside of Philadelphia, PA.",
+};
 
 export default function Home() {
   return (

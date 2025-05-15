@@ -22,11 +22,11 @@ export const metadata: Metadata = {
     default: "Carlton Stith",
     template: "%s | Carlton Stith",
   },
-  description: "Welcome to my personal portfolio website.",
+  description: "Welcome to my personal portfolio website. Carlton solves software problems, builds sophisticated applications, and creats things for software applications and the web several minutes outside of Philadelphia, PA.",
   twitter: {
     card: "summary_large_image",
     title: "Carlton Stith",
-    description: "Welcome to my personal portfolio website.",
+    description: "Welcome to my personal portfolio website. Carlton solves software problems, builds sophisticated applications, and creats things for software applications and the web several minutes outside of Philadelphia, PA.",
   },
 };
 
