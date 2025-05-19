@@ -1,14 +1,47 @@
-// "use client";
 import { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
+// import Link from "next/link";
+// import Image from "next/image";
+// import portfolioData from "../data/portfolio.json";
+import PortfolioCard from "../portfolio-card/page";
+import { Suspense } from "react";
+import { PortfolioModal } from "./PortfolioModal";
+import { PORTFOLIO_API } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Portfolio",
   description: "Explore my projects and skills.",
 };
 
-export default function Portfolio() {
+export type Props = {
+  searchParams: Record<string, string> | null | undefined;
+};
+
+export type Portfolio = {
+  id: number;
+  title: string;
+  shortDescription: string;
+  description: string;
+  technologies: string[];
+  github: string;
+  liveDemo: string;
+  image: string;
+  alt: string;
+};
+
+//const projects: PortfolioProps[] = portfolioData.PortfolioData;
+
+export default async function Portfolio(props: Props) {
+  const { searchParams } = props;
+  const showModal = searchParams?.modal === "true";
+  const portfolioId = searchParams?.id;
+
+  const response = await fetch(PORTFOLIO_API, {
+    next: { revalidate: 60 * 60 },
+  });
+  const projects = await response.json();
+  //const projects: Portfolio[] = portfolioData.PortfolioData;
+  console.log("projects: ", projects.projects);
+
   // const projects = [
   //   {
   //     title: "Cuts By Us",
@@ -60,8 +93,21 @@ export default function Portfolio() {
             Featured Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects && projects.projects.map((projects: Portfolio, idx: number) => (
+              <PortfolioCard
+                key={idx}
+                {...projects}
+              />
+            ))}
+
+            {showModal && (
+              <Suspense key={portfolioId} fallback={<div>Loading...</div>}>
+                <PortfolioModal id={portfolioId} />
+              </Suspense>
+            )}
+
             {/* ALARM CONNECTIONS */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
+            {/* <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
               <h3 className="text-xl font-bold mb-2">
                 Customer Invoice Management Portal
               </h3>
@@ -80,14 +126,17 @@ export default function Portfolio() {
                 was a wholesale alarm monitoring company that I had the pleasure
                 of working with for several years. The company provided alarm
                 monitoring services to alarm dealers and integrators. The
-                company needed a partner portal to allow their business partners to
-                manage their accounts, upload and view service invoices and reports, and access attrition reports. I was solely responsible for the design and
-                development, and management of the partner portal (as well as an internal
-                customer management system component, The Customer Care Dashboard). I used a .NET 3.1 Web API and
-                Angular for the UI application. This CRUD application allows
-                users to create, read, and upload invoices for processing. The
-                application uses the Entity Framework Core to interact with a
-                SQL Server database. The application also uses Bootstrap CSS to style the UI.
+                company needed a partner portal to allow their business partners
+                to manage their accounts, upload and view service invoices and
+                reports, and access attrition reports. I was solely responsible
+                for the design and development, and management of the partner
+                portal (as well as an internal customer management system
+                component, The Customer Care Dashboard). I used a .NET 3.1 Web
+                API and Angular for the UI application. This CRUD application
+                allows users to create, read, and upload invoices for
+                processing. The application uses the Entity Framework Core to
+                interact with a SQL Server database. The application also uses
+                Bootstrap CSS to style the UI.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {[
@@ -116,10 +165,10 @@ export default function Portfolio() {
                   View Project &rarr;
                 </Link>
               </div>
-            </div>
+            </div> */}
 
             {/* Password Generator, JavaScript/Next.js */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
+            {/* <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
               <h3 className="text-xl font-bold mb-2">
                 Password Generator Application
               </h3>
@@ -164,10 +213,10 @@ export default function Portfolio() {
                   View Project &rarr;
                 </Link>
               </div>
-            </div>
+            </div> */}
 
             {/* Stith Auto Group, .NET 8, JavaScript/Next.js */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
+            {/* <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
               <h3 className="text-xl font-bold mb-2">
                 Systems Management Application Dashboard
               </h3>
@@ -210,10 +259,10 @@ export default function Portfolio() {
                   View Project &rarr;
                 </Link>
               </div>
-            </div>
+            </div> */}
 
             {/* Coronavirus Tracker, ASP.NET or .NET  */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
+            {/* <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
               <h3 className="text-xl font-bold mb-2">Coronavirus Tracker</h3>
               <Image
                 src="/coronavirus_tracker.png"
@@ -251,7 +300,7 @@ export default function Portfolio() {
                   View Project &rarr;
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
