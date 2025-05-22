@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "http://localhost:4000/api/projects",
+        hostname: "http://localhost:3000/api/projects",
       },
       {
         protocol: "https",

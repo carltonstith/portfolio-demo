@@ -13,7 +13,8 @@ export const metadata: Metadata = {
 };
 
 export type Props = {
-  searchParams: Record<string, string> | null | undefined;
+  // searchParams: Record<string, string> | null | undefined;
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
 export type Portfolio = {
@@ -30,59 +31,18 @@ export type Portfolio = {
 
 //const projects: PortfolioProps[] = portfolioData.PortfolioData;
 
-export default async function Portfolio(props: Props) {
-  const { searchParams } = props;
+export default async function Portfolio({ searchParams }: Props) {
+  // const params = await searchParams;
+  // const showModal = params?.showModal === "true";
+  // const portfolioId = params.portfolioId;
   const showModal = searchParams?.modal === "true";
   const portfolioId = searchParams?.id;
-
   const response = await fetch(PORTFOLIO_API, {
     next: { revalidate: 60 * 60 },
   });
-  const projects = await response.json();
-  //const projects: Portfolio[] = portfolioData.PortfolioData;
-  console.log("projects: ", projects.projects);
-
-  // const projects = [
-  //   {
-  //     title: "Cuts By Us",
-  //     shortDescription: "Business website for Cuts By Us.",
-  //     description: "Cuts By Us is no longer in business. This barber shop was located in the historic Germantown section of Philadelphia, PA. The owner of this barber shop needed a web site and social media management. He required a website that would primarily serve two purposes. First, the local business wanted to establish a web presence (the owner has been in business since 2000 and has never had a web site) and second, serve as a virtual help-wanted ad. I was solely responsible for the ongoing maintenance of the website as well as their social media presence and activity.",
-  //     technologies: ["PHP", "HTML", "CSS", "JavaScript", "WordPress", "MySQL"],
-  //     link: "/portfolio-detail/project1",
-  //   },
-  //   {
-  //     title: "Project 2",
-  //     description: "Description of Project 2",
-  //     technologies: ["Python", "Django", "PostgreSQL"],
-  //     link: "/projects/project2",
-  //   },
-  //   {
-  //     title: "Project 3",
-  //     description: "Description of Project 3",
-  //     technologies: ["Java", "Spring Boot", "MySQL"],
-  //     link: "/projects/project3",
-  //   },
-  // ];
-  // const featuredProjects = [
-  //   {
-  //     title: "Project 1",
-  //     description: "Description of Project 1",
-  //     technologies: ["React", "Node.js", "MongoDB"],
-  //     link: "/projects/project1",
-  //   },
-  //   {
-  //     title: "Project 2",
-  //     description: "Description of Project 2",
-  //     technologies: ["Python", "Django", "PostgreSQL"],
-  //     link: "/projects/project2",
-  //   },
-  //   {
-  //     title: "Project 3",
-  //     description: "Description of Project 3",
-  //     technologies: ["Java", "Spring Boot", "MySQL"],
-  //     link: "/projects/project3",
-  //   },
-  // ];
+  console.log("response: ", response);
+  const projects: Portfolio[] = await response.json();
+  console.log("projects: ", projects);
 
   return (
     <section>
@@ -93,214 +53,16 @@ export default async function Portfolio(props: Props) {
             Featured Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects && projects.projects.map((projects: Portfolio, idx: number) => (
-              <PortfolioCard
-                key={idx}
-                {...projects}
-              />
-            ))}
+            {projects &&
+              projects.map((projects: Portfolio, idx: number) => (
+                <PortfolioCard key={idx} {...projects} />
+              ))}
 
             {showModal && (
               <Suspense key={portfolioId} fallback={<div>Loading...</div>}>
                 <PortfolioModal id={portfolioId} />
               </Suspense>
             )}
-
-            {/* ALARM CONNECTIONS */}
-            {/* <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
-              <h3 className="text-xl font-bold mb-2">
-                Customer Invoice Management Portal
-              </h3>
-              <Image
-                src="/alarmConnections-ThePartnershipConnection.png"
-                alt="The Partnership Connection Partner Portal for Alarm Connections"
-                width={300}
-                height={300}
-                className="my-10"
-              />
-              <p className="text-gray-400 mb-4">
-                Software development of a partner portal for Alarm Connections.
-              </p>
-              <p className="text-gray-400 mb-4">
-                Alarm Connections is no longer in business. Alarm Connections
-                was a wholesale alarm monitoring company that I had the pleasure
-                of working with for several years. The company provided alarm
-                monitoring services to alarm dealers and integrators. The
-                company needed a partner portal to allow their business partners
-                to manage their accounts, upload and view service invoices and
-                reports, and access attrition reports. I was solely responsible
-                for the design and development, and management of the partner
-                portal (as well as an internal customer management system
-                component, The Customer Care Dashboard). I used a .NET 3.1 Web
-                API and Angular for the UI application. This CRUD application
-                allows users to create, read, and upload invoices for
-                processing. The application uses the Entity Framework Core to
-                interact with a SQL Server database. The application also uses
-                Bootstrap CSS to style the UI.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {[
-                  "Angular",
-                  "JavaScript",
-                  "HTML",
-                  "CSS",
-                  ".NET 3.1",
-                  "Web API",
-                  "SQL",
-                  "Entity Framework",
-                ].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="bg-orange-500 text-white py-1 px-3 text-sm font-medium mr-2 rounded-full hover:bg-blue=500/20 transition-all hover:shadow-[0_2px_8px _rgba(59,130,2246.0.1)]"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex justify-between items-center mt-4">
-                <Link
-                  href="/"
-                  className="text-orange-400 hover:text-orange-300 transition-colors my-4 no-underline"
-                >
-                  View Project &rarr;
-                </Link>
-              </div>
-            </div> */}
-
-            {/* Password Generator, JavaScript/Next.js */}
-            {/* <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
-              <h3 className="text-xl font-bold mb-2">
-                Password Generator Application
-              </h3>
-              <Image
-                src="/password-generator.png"
-                alt="Password Generator"
-                width={300}
-                height={300}
-                className="my-10"
-              />
-              <p className="text-gray-400 mb-4">
-                Create a secure password in a sleek UI and save it to your
-                clipboard.
-              </p>
-              <p className="text-gray-400 mb-4">
-                This was a personal project. I created this application to learn
-                how to use the Next.js React framework. I wanted to learn how to
-                use the framework and the Tailwind CSS library. I also wanted to
-                learn how to use the Fetch API to get data from an API. I used
-                the Random User Generator API to get data about random users. I
-                used the Chart.js library to create charts and graphs to display
-                the data.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Next.js", "Tailwind CSS", "DaisyUI"].map(
-                  (tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-orange-500 text-white py-1 px-3 text-sm font-medium mr-2 rounded-full hover:bg-blue=500/20 transition-all hover:shadow-[0_2px_8px _rgba(59,130,2246.0.1)]"
-                    >
-                      {tech}
-                    </span>
-                  )
-                )}
-              </div>
-              <div className="flex justify-between items-center mt-4">
-                <Link
-                  href="https://password-generator-five-red.vercel.app"
-                  target="_blank"
-                  className="text-orange-400 hover:text-orange-300 transition-colors my-4 no-underline"
-                >
-                  View Project &rarr;
-                </Link>
-              </div>
-            </div> */}
-
-            {/* Stith Auto Group, .NET 8, JavaScript/Next.js */}
-            {/* <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
-              <h3 className="text-xl font-bold mb-2">
-                Systems Management Application Dashboard
-              </h3>
-              <Image
-                src="/stith-auto-group.png"
-                alt="Stith Auto Group"
-                width={300}
-                height={300}
-                className="my-10"
-              />
-              <p className="text-gray-400 mb-4">
-                Full-stack systems management system for a fictional auto
-                dealership with modern UI, CRUD functionality, and customizable
-                product inventory
-              </p>
-              <p className="text-gray-400 mb-4">
-                This was a personal project. This is a .NET 8 Web API and
-                Next.js UI application. This CRUD application allows users to
-                create, read, update, and delete records. The application uses
-                the Entity Framework Core to interact with a SQL Server
-                database. The application uses the Tailwind CSS library to style
-                the UI.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {[".NET 8", "TypeScript", "Next.js", "SQL"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="bg-orange-500 text-white py-1 px-3 text-sm font-medium mr-2 rounded-full hover:bg-blue=500/20 transition-all hover:shadow-[0_2px_8px _rgba(59,130,2246.0.1)]"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex justify-between items-center mt-4">
-                <Link
-                  href="https://stithautogroup-ui.vercel.app"
-                  target="_blank"
-                  className="text-orange-400 hover:text-orange-300 transition-colors my-4 no-underline"
-                >
-                  View Project &rarr;
-                </Link>
-              </div>
-            </div> */}
-
-            {/* Coronavirus Tracker, ASP.NET or .NET  */}
-            {/* <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
-              <h3 className="text-xl font-bold mb-2">Coronavirus Tracker</h3>
-              <Image
-                src="/coronavirus_tracker.png"
-                alt="Coronavirus Tracker"
-                width={300}
-                height={300}
-                className="my-10"
-              />
-              <p className="text-gray-400 mb-4">
-                Application used to retrieve COVID-19 cases and display related
-                data.
-              </p>
-              <p className="text-gray-400 mb-4">
-                This application was created to track the spread of the
-                coronavirus. The application uses the Chart.js library to create
-                charts and graphs to display the data. The application uses the
-                Fetch API to get data from an API. I used the COVID-19 API to
-                get data about the coronavirus.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["SocketIO", "Express", "React", "Redis"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="bg-orange-500 text-white py-1 px-3 text-sm font-medium mr-2 rounded-full hover:bg-blue=500/20 transition-all hover:shadow-[0_2px_8px _rgba(59,130,2246.0.1)]"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex justify-between items-center mt-4">
-                <Link
-                  href="/"
-                  className="text-orange-400 hover:text-orange-300 transition-colors my-4 no-underline"
-                >
-                  View Project &rarr;
-                </Link>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

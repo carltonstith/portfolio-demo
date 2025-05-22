@@ -7,7 +7,7 @@ import { Portfolio } from "./page";
 
 
 interface PortfolioModalProps {
-  id?: number;
+  id?: string;
 }
 
 const portfolio: Portfolio = {
@@ -23,12 +23,16 @@ const portfolio: Portfolio = {
 };
 
 export const PortfolioModal = async ({ id }: PortfolioModalProps) => {
-  if(!id || isNaN(id)) {
+  if(!id || isNaN(parseInt(id, 10))) {
     return redirect("/portfolio");
   }
+  console.log("id: ", id);
 
-  const response = await fetch(PORTFOLIO_API);
+  const response = await fetch(PORTFOLIO_API + `/${id}`);
   const data = (await response.json()) as Portfolio;
+  console.log(data[0].alt);
+  console.log(Array.isArray(data));
+  
   return (
     <div className="fixed inset-0 flex items-center justify-center z-10">
 			<Link
@@ -51,17 +55,17 @@ export const PortfolioModal = async ({ id }: PortfolioModalProps) => {
 					<div className="grid gap-4 md:grid-cols-2 items-start">
 						<div className="aspect-square w-full relative bg-white rounded-t-lg">
 							<Image
-								alt={data.title}
+								alt={data[0].title}
 								className="object-contain w-full rounded-lg overflow-hidden"
 								fill={true}
 								priority={true}
 								loading="eager"
-								src={data.image}
+								src={data[0].image}
 							/>
 						</div>
 						<div className="space-y-2">
 							<h1 className="font-bold text-2xl sm:text-3xl max-w-[90%]">
-								{data.title}
+							 {data[0].title}
 							</h1>
 							<div className="flex items-center gap-4">
 								{/* ⭐ {product.rating.rate} */}
@@ -71,27 +75,37 @@ export const PortfolioModal = async ({ id }: PortfolioModalProps) => {
                   dummy text
 								</span>
 							</div>
-							<p className="text-sm leading-loose">{portfolio.description}</p>
+							<p className="text-sm leading-loose">{data[0].description}</p>
 							<span className="inline-block bg-blue-200 text-blue-800 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">
-								{/* {data.technologies.map((tech, index) => (
+								{data[0].technologies.map((tech, index) => (
                   <span
                     key={index}
                     className="bg-orange-500 text-white py-1 px-3 text-sm font-medium mr-2 rounded-full hover:bg-blue=500/20 transition-all hover:shadow-[0_2px_8px _rgba(59,130,2246.0.1)]"
                   >
                     {tech}
                   </span>
-                ))} */}
+                ))}
 							</span>
 						</div>
 					</div>
 				</div>
 				<div className="pb-3 px-3">
-					<button className="h-11 bg-secondary text-secondary-foreground hover:bg-secondary/80 justify-center flex text-center w-full border rounded py-2 text-white hover:bg-white transition-colors duration-300 hover:text-zinc-900 border-zinc-300 hover:border-zinc-900">
+          <Link
+            href={data[0].liveDemo}
+            target="_blank"
+            >
+              <button className="h-11 bg-secondary text-secondary-foreground hover:bg-secondary/80 justify-center flex text-center w-full border rounded py-2 text-white hover:bg-white transition-colors duration-300 hover:text-zinc-900 border-zinc-300 hover:border-zinc-900">
 						Live Demo
 					</button>
-          <button className="h-11 bg-secondary text-secondary-foreground hover:bg-secondary/80 justify-center flex text-center w-full border rounded py-2 text-white hover:bg-white transition-colors duration-300 hover:text-zinc-900 border-zinc-300 hover:border-zinc-900">
-						GitHub
+            </Link>
+            <Link
+            href={data[0].github}
+            target="_blank"
+            >
+              <button className="h-11 bg-secondary text-secondary-foreground hover:bg-secondary/80 justify-center flex text-center w-full border rounded py-2 text-white hover:bg-white transition-colors duration-300 hover:text-zinc-900 border-zinc-300 hover:border-zinc-900">
+						Code
 					</button>
+            </Link>
 				</div>
 			</div>
 		</div>

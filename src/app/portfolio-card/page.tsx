@@ -9,7 +9,7 @@ export default async function PortfolioCard(portfolio: Portfolio) {
   const pathname = headersList.get("x-pathname");
   // why is the pathname null?
   const url = new URL(pathname ? pathname: "", "http://localhost:3000/portfolio");
-  console.log(pathname);
+  console.log("pathname: "+ pathname);
   //console.log(url);
 
   url.searchParams.set("modal", "true");
@@ -30,9 +30,9 @@ export default async function PortfolioCard(portfolio: Portfolio) {
               <p className="text-gray-400 mb-4">
                 {portfolio.shortDescription}
               </p>
-              <p className="text-gray-400 mb-4">
+              {/* <p className="text-gray-400 mb-4">
                 {portfolio.description}
-              </p>
+              </p> */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {portfolio.technologies.map((tech, key) => (
                   <span
