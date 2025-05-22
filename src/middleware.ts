@@ -4,6 +4,7 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const headers = new Headers(request.headers);
   headers.set("x-pathname", request.nextUrl.pathname);
+  console.log(`Received ${request.method} request to ${request.url} at ${new Date()}`);
   return NextResponse.next({ headers });
 }
 

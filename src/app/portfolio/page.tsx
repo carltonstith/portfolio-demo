@@ -35,11 +35,13 @@ export default async function Portfolio({ searchParams }: Props) {
   // const params = await searchParams;
   // const showModal = params?.showModal === "true";
   // const portfolioId = params.portfolioId;
+
+  // THIS IS THE OLD WAY, BUT IT WORKS
   const showModal = (await searchParams)?.modal === "true";
   const portfolioId = (await searchParams)?.id;
-  console.log("showModal: ", showModal);
-  console.log("portfolioId: ", portfolioId); // this is undefined
-  console.log("searchParams: ", searchParams);
+  // console.log("showModal: ", showModal);
+  // console.log("portfolioId: ", portfolioId); // this is undefined
+  // console.log("searchParams: ", searchParams);
   const response = await fetch(PORTFOLIO_API, {
     next: { revalidate: 60 * 60 },
   });
