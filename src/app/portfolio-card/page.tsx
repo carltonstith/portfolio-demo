@@ -7,10 +7,9 @@ import { Portfolio } from "@/app/portfolio/page";
 export default async function PortfolioCard(portfolio: Portfolio) {
   const headersList = await headers();
   const pathname = headersList.get("x-pathname");
-  // why is the pathname null?
+  console.log(pathname);
   const url = new URL(pathname ? pathname: "", "http://localhost:3000/portfolio");
   console.log("pathname: "+ pathname);
-  //console.log(url);
 
   url.searchParams.set("modal", "true");
   url.searchParams.set("id", portfolio.id.toString());
