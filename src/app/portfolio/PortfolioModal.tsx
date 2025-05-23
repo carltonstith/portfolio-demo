@@ -9,17 +9,17 @@ interface PortfolioModalProps {
   id?: string;
 }
 
-const portfolio: Portfolio = {
-  id: 0,
-  title: "",
-  shortDescription: "",
-  description: "",
-  technologies: [],
-  github: "",
-  liveDemo: "",
-  image: "",
-  alt: "",
-};
+// const portfolio: Portfolio = {
+//   id: 0,
+//   title: "",
+//   shortDescription: "",
+//   description: "",
+//   technologies: [],
+//   github: "",
+//   liveDemo: "",
+//   image: "",
+//   alt: "",
+// };
 
 export const PortfolioModal = async ({ id }: PortfolioModalProps) => {
   if (!id || isNaN(parseInt(id, 10))) {
