@@ -29,6 +29,11 @@ export const PortfolioModal = async ({ id }: PortfolioModalProps) => {
 
   const response = await fetch(PORTFOLIO_API + `/${id}`).then((res) => {
     if (!res.ok) {
+      // Handle error in the UI
+      console.error("Error fetching data:", res.statusText);
+      // Optionally, you can redirect or show an error message
+      redirect("/portfolio");
+
       throw new Error("Failed to fetch data");
     }
     return (res.json() as unknown) as Portfolio;

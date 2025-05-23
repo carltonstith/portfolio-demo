@@ -16,8 +16,8 @@
             "Bootstrap",
             "SQL Server"
         ],
-        "github": "",
-        "liveDemo": "https://example.com/project1",
+        "github": "https://github.com/cstith-ac/ThePartnershipConnection",
+        "liveDemo": "https://github.com/cstith-ac/ThePartnershipConnection",
         "image": "/alarmConnections-ThePartnershipConnection.png",
         "alt": "The Partnership Connection Partner Portal for Alarm Connections"
     },
@@ -60,7 +60,8 @@
             "ASP.NET Core Identity",
             ".NET 8",
             "Entity Framework Core",
-            "Web API"
+            "Web API",
+            "Azure DevOps"
         ],
         "github": "https://dev.azure.com/aseniordev/StithAutoGroup",
         "liveDemo": "https://stithautogroup-ui.vercel.app",

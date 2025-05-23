@@ -3,7 +3,7 @@ import data from "../../../data/portfolio.json";
 
 export async function GET(
   request: Request,
-  context: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   const params = await context.params;
   const project = data.find((x) => x.id.toString() === params.id);
