@@ -1,7 +1,4 @@
 import { Metadata } from "next";
-// import Link from "next/link";
-// import Image from "next/image";
-// import portfolioData from "../data/portfolio.json";
 import PortfolioCard from "../portfolio-card/page";
 import { Suspense } from "react";
 import { PortfolioModal } from "./PortfolioModal";
@@ -13,7 +10,6 @@ export const metadata: Metadata = {
 };
 
 export type Props = {
-  // searchParams: Record<string, string> | null | undefined;
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
@@ -29,19 +25,10 @@ export type Portfolio = {
   alt: string;
 };
 
-//const projects: PortfolioProps[] = portfolioData.PortfolioData;
-
 export default async function Portfolio({ searchParams }: Props) {
-  // const params = await searchParams;
-  // const showModal = params?.showModal === "true";
-  // const portfolioId = params.portfolioId;
-
   // THIS IS THE OLD WAY, BUT IT WORKS
   const showModal = (await searchParams)?.modal === "true";
   const portfolioId = (await searchParams)?.id;
-  // console.log("showModal: ", showModal);
-  // console.log("portfolioId: ", portfolioId); // this is undefined
-  // console.log("searchParams: ", searchParams);
   const response = await fetch(PORTFOLIO_API, {
     next: { revalidate: 60 * 60 },
   });
