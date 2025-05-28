@@ -8,8 +8,10 @@ export async function PortfolioCard(props: Portfolio) {
   const headersList = await headers();
   const pathname = headersList.get("x-pathname");
   console.log(pathname);
-  const url = new URL(pathname ? pathname: "", "http://localhost:3000/portfolio");
+  // const url = new URL(pathname ? pathname: "", "http://localhost:3000/portfolio");
+  const url = new URL(pathname ? pathname: "", process.env.API_URL);
   console.log("pathname: "+ pathname);
+  console.log(process.env.API_URL);
 
   url.searchParams.set("modal", "true");
   url.searchParams.set("id", props.id.toString());
