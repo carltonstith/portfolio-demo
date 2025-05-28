@@ -78,15 +78,16 @@ export async function GET() {
     },
     {
       id: 4,
-      title: "Customer Invoice Management Portal",
-      shortDescription: "This is a short description of project four.",
+      title: "Cuts By Us Barbershop Website",
+      shortDescription: "A business website for a local barbershop.",
       description:
-        "This is a description of project four. A longer description of the project. This is a description of project four. A longer description of the project. This is a description of project four. A longer description of the project.",
-      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "jQuery"],
+        "This is a business website for a local barbershop. The website was built using WordPress and is designed to be responsive and user-friendly. The website includes a homepage, about page, services page, and contact page. The website also includes a blog section where the barbershop can post updates and news. The website is designed to be easy to navigate and provides all the information that a potential customer would need to know about the barbershop.",
+      technologies: ["HTML", "CSS", "JavaScript","PHP",
+            "MySQL", "WordPress", "Bootstrap", "jQuery"],
       github: "https://github.com/carltonstith/portfolio-demo",
       liveDemo: "https://example.com/project4",
       image: "/cutsByUsBarbershop.jpg",
-      alt: "Project Four",
+      alt: "Cuts By Us Barbershop Website",
     },
   ]);
 }
