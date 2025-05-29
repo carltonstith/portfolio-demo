@@ -81,7 +81,7 @@ export async function GET() {
       title: "Cuts By Us Barbershop Website",
       shortDescription: "A business website for a local barbershop.",
       description:
-        "This is a business website for a local barbershop. The website was built using WordPress and is designed to be responsive and user-friendly. The website includes a homepage, about page, services page, and contact page. The website also includes a blog section where the barbershop can post updates and news. The website is designed to be easy to navigate and provides all the information that a potential customer would need to know about the barbershop.",
+        "This is a business website for a local barbershop. The website was built using WordPress and is designed to be responsive and user-friendly. The website includes a homepage, about page, services page, and contact page. The website also includes a blog section where the barbershop can post updates and news. The website is designed to be easy to navigate and provides all the information that a potential customer would need to know about the barbershop. I was also responsible for the business social media presence, which included creating and managing the barbershop's Facebook and Instagram pages.",
       technologies: ["HTML", "CSS", "JavaScript","PHP",
             "MySQL", "WordPress", "Bootstrap", "jQuery"],
       github: "https://github.com/carltonstith/portfolio-demo",
