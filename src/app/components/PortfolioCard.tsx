@@ -17,7 +17,7 @@ export async function PortfolioCard(props: Portfolio) {
   url.searchParams.set("id", props.id.toString());
   
   return (
-    <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
+    <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-gray-500/30 hover:shadow-[0_2px_8px _rgba(59,130,246.0.2)] transition">
               <h3 className="text-xl font-bold mb-2">
                 {props.title}
               </h3>

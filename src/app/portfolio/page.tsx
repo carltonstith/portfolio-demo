@@ -61,7 +61,10 @@ export default async function Portfolio({
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-center">
             {""}
-            Featured Projects
+            {/* Some of my work */}
+            Hi. Thanks for taking a look at my portfolio.
+Some of the projects that are featured here are labors of love and other were paid projects.
+I'm currently available for hire.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects &&

@@ -7,6 +7,8 @@ export const metadata: Metadata = {
 };
 
 export default function About() {
+  const aboutMe =
+    "I'm a full-stack .Net software engineer solving problems with code right outside the city of Philadelphia, PA.";
   const frontendSkills = [
     "HTML",
     "CSS",
@@ -41,12 +43,11 @@ export default function About() {
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-center">About Me</h2>
           <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1.transition-all">
-            <p className="mb-6">
-              Hello! I&rsquo;m a software engineer with a passion for building web
-              applications. I specialize in .NET and JavaScript technologies,
-              and I love creating efficient and user-friendly solutions.
-            </p>
+            <p className="mb-6">{aboutMe}</p>
 
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              Some of the technologies that I use on a daily basis
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="rounded-xl p-6 hover:translate-y-1 transition-all">
                 <h3 className="text-xl font-bold mb-4">Frontend</h3>
