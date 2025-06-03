@@ -4,12 +4,6 @@ const nextConfig: NextConfig = {
   /* config options here */
   images: {
     remotePatterns: [
-      // {
-      //   protocol: "https",
-      //   hostname: "www.carltonstith.com",
-      //   port: "",
-      //   pathname: "/images/**",
-      // },
       {
         protocol: "https",
         hostname: "www.carltonstith.com",
