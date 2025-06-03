@@ -9,18 +9,6 @@ interface PortfolioModalProps {
   id?: string;
 }
 
-// const portfolio: Portfolio = {
-//   id: 0,
-//   title: "",
-//   shortDescription: "",
-//   description: "",
-//   technologies: [],
-//   github: "",
-//   liveDemo: "",
-//   image: "",
-//   alt: "",
-// };
-
 export const PortfolioModal = async ({ id }: PortfolioModalProps) => {
   if (!id || isNaN(parseInt(id, 10))) {
     return redirect("/portfolio");
@@ -94,7 +82,7 @@ export const PortfolioModal = async ({ id }: PortfolioModalProps) => {
         </div> */}
         <div className="bg-white rounded-lg max-w-3xl h- mx-auto p-3 space-y-4 overflow-y-auto max-h-96 z-20">
           <div className="grid gap-4 md:grid-cols-2 items-start">
-            <div className="aspect-square w-full relative bg-white rounded-t-lg">
+            <div className="mt-8 aspect-square w-full relative bg-white rounded-t-lg">
               <figure>
                 <Image
                   src={response.image}
@@ -112,7 +100,33 @@ export const PortfolioModal = async ({ id }: PortfolioModalProps) => {
                 {response.title}
               </h1>
               <p className="text-sm leading-loose">{response.description}</p>
-              <span className="inline-block bg-blue-200 text-blue-800 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">
+              <ul>
+                {response.technologies.map((tech, index) => (
+                  <li
+                    key={index}
+                    className="inline-block m-1 bg-blue-500 text-white py-1 px-3 text-sm font-medium mr-2 rounded-full hover:bg-blue-600 transition-all hover:shadow-[0_2px_8px_rgba(59,130,224,0.1)]"
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+              <div className="card-actions justify-start">
+              <Link
+                href={response.liveDemo}
+                target="_blank"
+                className="btn btn-clr-primary"
+              >
+                Live Demo
+              </Link>
+              <Link
+                href={response.github}
+                target="_blank"
+                className="btn btn-clr-secondary"
+              >
+                Code
+              </Link>
+            </div>
+              {/* <span className="inline-block text-blue-800 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">
                 {response.technologies.map((tech, index) => (
                   <span
                     key={index}
@@ -121,7 +135,7 @@ export const PortfolioModal = async ({ id }: PortfolioModalProps) => {
                     {tech}
                   </span>
                 ))}
-              </span>
+              </span> */}
             </div>
           </div>
         </div>
